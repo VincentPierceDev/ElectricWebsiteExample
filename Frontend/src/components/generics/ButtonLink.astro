@@ -1,0 +1,11 @@
+---
+import '../../css/Global.css';
+import '../../css/components/ButtonLink.css';
+
+const {href, primary = "true"} = Astro.props;
+---
+
+
+<a class={primary === "true" ? `primary-button` : `secondary-button`} href={href}>
+    <span id="button-link-text" class="body-text text-color-light"><slot/></span>
+</a>

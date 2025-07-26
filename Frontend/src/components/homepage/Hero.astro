@@ -1,0 +1,73 @@
+---
+import '../../css/Global.css';
+import '../../css/components/homepage/Hero.css';
+import { ImportAvif, ImportWebP, ImportJpg } from '../../_Scripts/BuildScripts/ImageImporter';
+
+import ButtonLink from '../generics/ButtonLink.astro';
+
+import MobileImage from '../../assets/HomeHeroMobile.jpg';
+import TabletImage from '../../assets/HomeHeroTablet.jpg';
+import DesktopImage from '../../assets/HomeHeroDesktop.jpg';
+
+/* Avif Imports */
+const ABGMobile = await ImportAvif(MobileImage, MobileImage.width / 2, "low");
+
+const ABGTablet = await ImportAvif(TabletImage, TabletImage.width / 2, "medium");
+
+const ABGDesktop = await ImportAvif(TabletImage, TabletImage.width / 2, "high");
+
+/* Avif Imports */
+
+/* Webp Imports */
+const WBGMobile = await ImportWebP(MobileImage, MobileImage.width / 2, "low");
+
+const WBGTablet = await ImportWebP(TabletImage, TabletImage.width / 2, "medium");
+
+const WBGDesktop = await ImportWebP(DesktopImage, DesktopImage.width / 2, "high");
+/* Webp Imports */
+
+/* Jpg Imports */
+const JBGMobile = await ImportJpg(MobileImage, MobileImage.width / 3, "low");
+
+const JBGTablet = await ImportJpg(TabletImage, TabletImage.width / 3, "medium");
+
+const JBGDesktop = await ImportJpg(DesktopImage, DesktopImage.width / 3, "medium");
+/* Jpg Imports */
+
+const MobileImages = [ABGMobile, WBGMobile, JBGMobile];
+const TabletImages = [ABGTablet, WBGTablet, JBGTablet];
+const DesktopImages = [ABGDesktop, WBGDesktop, JBGDesktop];
+---
+
+<section id="home-hero" class="section">
+    <div class="container hero-container">
+        <div class="title-container">
+            <h1 class="hero-heading text-color-light"><strong>Powering</strong> your home, <br/> <strong>Brightening</strong> your life</h1>
+        </div>
+        <p class="body-text text-color-light mission-statement">Professional electrical services for residential and commercial properties all around <strong>East Texas</strong>. Licensed, bonded, and insured. We are dedicated to providing our highest quality service.</p>
+        <div class="buttons-container">
+            <ButtonLink href="/Contact" primary="true">Get a Free Quote</ButtonLink>
+            <ButtonLink href="/Services" primary={false}>Our Services</ButtonLink>
+        </div>
+    </div>
+    <div class="background-image-wrapper">
+        <picture>
+            {
+                MobileImages.map((img) => (
+                    <source media="(max-width: 768px)"  srcset={img.src}/>
+                ))
+            }
+            {
+                TabletImages.map((img) => (
+                    <source media="(max-width: 1024px)" srcset={img.src}/>
+                ))
+            }
+            {
+                DesktopImages.map((img) => (
+                    <source media="(min-width: 1025px)" srcset={img.src}/>
+                ))
+            }
+            <img class="full-image" src="" alt="background image of an electrician working">
+        </picture>
+    </div>
+</section>

@@ -1,0 +1,15 @@
+{
+  "name": "frontend",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "build:scripts": "vite build --config vite.scripts.config.js",
+    "build": "npm run build:scripts && astro build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.12.3"
+  }
+}

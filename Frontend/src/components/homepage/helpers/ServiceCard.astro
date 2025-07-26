@@ -1,0 +1,25 @@
+---
+import '../../../css/Global.css';
+import '../../../css/components/homepage/ServiceCard.css';
+
+const { title, description, href, idx, iconSrc} = Astro.props;
+
+const altText = title.split(' ')[0] + ' icon';
+---
+
+<li id={`service-card-${idx}`} class="service-card flex-column">
+    <div class="card-icon-wrapper">
+        <img class="full-image service-icon" src={iconSrc} alt={altText}/>
+    </div>
+    <div class="flex-column content-container">
+        <h3 class="card-title">{title}</h3>
+        <p class="card-text">{description}</p>
+    </div>
+    <div class="flex-row">
+        <a href={href}>Learn More</a>
+        <div class="chevron-wrapper">
+            <img class="full-image" src="/Icons/ChevronIcon.svg" alt="Chevron icon"/>
+        </div>
+    </div>
+</li>
+

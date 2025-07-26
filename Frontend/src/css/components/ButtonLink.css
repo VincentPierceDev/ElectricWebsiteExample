@@ -1,0 +1,39 @@
+
+
+@media (min-width: 0px)
+{
+    .primary-button,
+    .secondary-button {
+        border-radius: 0.5rem;
+        padding: 0.875rem 1.5rem;
+        width: fit-content;
+        height: fit-content;
+        text-decoration: none;
+    }
+
+    @media(pointer: fine)
+    {
+        .primary-button:hover{
+            cursor: pointer;
+            background-color: var(--accent-color);
+        }
+
+        .secondary-button:hover{
+            cursor: pointer;
+            outline: 2px solid var(--accent-color);
+        }
+    }
+
+    .primary-button{
+        background: var(--primary-color-light);
+    }
+
+    .secondary-button{
+        background: var(--primary-color-dark);
+    }
+
+    #button-link-text{
+        user-select: none;
+        pointer-events: none;
+    }
+}

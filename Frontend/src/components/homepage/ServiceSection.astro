@@ -1,0 +1,69 @@
+---
+import '../../css/Global.css';
+import '../../css/components/homepage/ServiceSection.css';
+import ServiceCard from './helpers/ServiceCard.astro';
+
+interface ServiceCardDetails {
+    title: string;
+    description: string;
+    href: string;
+    iconSrc: string;
+}
+
+const details: ServiceCardDetails[] = [
+    {
+        title: "Lighting Installation",
+        description: "Professional lighting installation to enhance your space.",
+        href: "/services/lighting",
+        iconSrc: "/Icons/LightBulbIcon.svg"
+    },
+    {
+        title: "Panel Upgrades",
+        description: "Upgrade your electrical panel for better performance and safety.",
+        href: "/services/panel-upgrades",
+        iconSrc: "/Icons/LightningBoltIcon.svg"
+    },
+    {
+        title: "Home Rewiring",
+        description: "Complete rewiring services for older homes to meet modern standards.",
+        href: "/services/rewiring",
+        iconSrc: "/Icons/HomeIcon.svg"
+    },
+    {
+        title: "Safety Inspections",
+        description: "Thorough safety inspections to ensure your electrical systems are safe.",
+        href: "/services/safety-inspections",
+        iconSrc: "/Icons/SafetyIcon.svg"
+    },
+    {
+        title: "Outlet Installation",
+        description: "Installation of new outlets for convenience and accessibility.",
+        href: "/services/outlet-installation",
+        iconSrc: "/Icons/OutletIcon.svg"
+    },
+    {
+        title: "Generator Setup",
+        description: "Reliable generator setup to keep your home powered during outages.",
+        href: "/services/generator-setup",
+        iconSrc: "/Icons/GeneratorIcon.svg"
+    }
+] as ServiceCardDetails[];
+---
+
+<section id="home-service-section" class="section">
+    <div id="section-box" class="container flex-column">
+        <div class="content-wrapper">
+            <h2 class="section-heading">Our Specialties</h2>
+            <p class="body-text">
+                From routine maintenance to full electrical overhauls, our licensed electricians deliver reliable, code-compliant solutions for both homes and businesses in the East Texas area. We handle everything from panel upgrades and wiring to lighting installation, circuit breakers, EV chargers, and more. Whether it is a quick fix or a complex project, we focus on safety, efficiency, and long-term performance, so your property stays powered and protected.
+            </p>
+        </div>
+        <ul class="service-list">
+            {
+                details.map((detail, idx) => (
+                    <ServiceCard title={detail.title} description={detail.description} href={detail.href} iconSrc={detail.iconSrc} idx={idx}/>
+                ))
+            }
+        </ul>
+    </div>
+</section>

@@ -1,0 +1,27 @@
+@media(min-width: 0px)
+{
+    .service-card {
+        gap: 1rem;
+    }
+
+    .service-card .card-icon-wrapper {
+        width: 3rem;
+        height: 3rem;
+        border-radius: 50%;
+        background: var(--secondary-color);
+        padding: .75rem;
+    }
+
+    .service-card .service-icon {
+        filter: brightness(0) saturate(100%) invert(27%) sepia(97%) saturate(2641%) hue-rotate(216deg) brightness(96%) contrast(91%);
+    }
+
+    .service-card .chevron-wrapper {
+        width: 1rem;
+        height: 1rem;
+    }
+
+    .service-card .chevron-wrapper img {
+        filter: brightness(0) saturate(100%) invert(27%) sepia(97%) saturate(2641%) hue-rotate(216deg) brightness(96%) contrast(91%);
+    }
+}
