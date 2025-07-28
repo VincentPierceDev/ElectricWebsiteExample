@@ -1,0 +1,113 @@
+---
+import '../../css/components/homepage/SafetySection.css';
+
+import { ImportAvif, ImportWebP, ImportJpg } from '../../_Scripts/BuildScripts/ImageImporter';
+
+import MobileImage from '../../assets/ElectricianWorkingMobile.jpg';
+import TabletImage from '../../assets/ElectricianWorkingTablet.jpg';
+import DesktopImage from '../../assets/ElectricianWorkingDesktop.jpg';
+
+/* Avif Imports */
+const AMSImage = await ImportAvif(MobileImage, MobileImage.width / 2, "high");
+const ATSImage = await ImportAvif(TabletImage, TabletImage.width / 2, "high");
+const ADSImage = await ImportAvif(DesktopImage, DesktopImage.width / 1.5, "high");
+
+/* Webp Imports */
+const WMSImage = await ImportWebP(MobileImage, MobileImage.width / 2, "high");
+const WTSImage = await ImportWebP(TabletImage, TabletImage.width / 2, "high");
+const WDSImage = await ImportWebP(DesktopImage, DesktopImage.width / 2, "high");
+
+/* Jpg Imports */
+const JMSImage = await ImportJpg(MobileImage, MobileImage.width / 3, "medium");
+const JTSImage = await ImportJpg(TabletImage, TabletImage.width / 4, "high");
+const JDSImage = await ImportJpg(DesktopImage, DesktopImage.width / 3, "high");
+
+const MobileImages = [AMSImage, WMSImage, JMSImage];
+const TabletImages = [ATSImage, WTSImage, JTSImage];
+const DesktopImages = [ADSImage, WDSImage, JDSImage];
+
+---
+
+<section id="safety-section" class="section">
+    <div class="flex-column container">
+        <div class="top-content">
+            <div class="text-wrapper">
+                <h2 class="section-heading">Our Commitment to Safety</h2>
+                <p class="body-text description">
+                    <strong>Safety is our top priority</strong> at Watts On Electric. We follow rigorous protocols and industry best practices to ensure every installation and repair meets the highest safety standards. Our team is trained in the latest safety procedures and equipped with the best tools to handle any electrical challenge safely and efficiently.
+                </p>
+            </div>
+            <div id="standalone-card" class="flex-column stat-card">
+                <div class="icon-wrapper">
+                    <img class="full-image" src="/Icons/PersonCelebrating.svg" alt="icon of person with arms open in a celebration gesture" loading="lazy" decoding="async"/>
+                </div>
+                <h3 class="card-title">
+                    Customer Satisfaction
+                </h3>
+                <p class="card-text">
+                    We prioritize our customers' needs and work diligently to exceed their expectations. Your satisfaction is our success.
+                </p>
+            </div>
+        </div>
+        <div class="visual-content">
+            <div class="photo-frame">
+                <picture class="section-photo">
+                    {
+                        MobileImages.map((image) => (
+                            <source media="(max-width: 768px)" srcset={image.src}  type={image.type} />
+                        ))
+                    }
+                    {
+                        TabletImages.map((image) => (
+                            <source media="(max-width: 1024px)" srcset={image.src} type={image.type} />
+                        ))
+                    }
+                    {
+                        DesktopImages.map((image) => (
+                            <source media="(min-width: 1025px)" srcset={image.src} type={image.type} />
+                        ))
+                    }
+                    <img class="full-image" src={TabletImages[1].src} alt="two electricians measuring electrical currents of an infrastructure" loading="lazy" decoding="async"/>
+                </picture>
+            </div>
+            <ul class="safety-list">
+                <li class="safety-item">
+                    <div class="check-wrapper">
+                        <img class="full-image check-icon" src="/Icons/CheckIcon.svg" alt="check mark" loading="lazy" decoding="async"/>
+                    </div>
+                    <h3 class="body-text">Safety Inspections</h3>
+                </li>
+                <li class="safety-item">
+                    <div class="check-wrapper">
+                        <img class="full-image check-icon" src="/Icons/CheckIcon.svg" alt="check mark" loading="lazy" decoding="async"/>
+                    </div>
+                    <h3 class="body-text">Up-To-Date With Electrical Codes</h3>
+                </li>
+                <li class="safety-item">
+                    <div class="check-wrapper">
+                        <img class="full-image check-icon" src="/Icons/CheckIcon.svg" alt="check mark" loading="lazy" decoding="async"/>
+                    </div>
+                    <h3 class="body-text">Premium Materials and Equipment</h3>
+                </li>
+                <li class="safety-item">
+                    <div class="check-wrapper">
+                        <img class="full-image check-icon" src="/Icons/CheckIcon.svg" alt="check mark" loading="lazy" decoding="async"/>
+                    </div>
+                    <h3 class="body-text">Ongoing Training and Certification</h3>
+                </li>
+                <li class="safety-item">
+                    <div class="check-wrapper">
+                        <img class="full-image check-icon" src="/Icons/CheckIcon.svg" alt="check mark" loading="lazy" decoding="async"/>
+                    </div>
+                    <h3 class="body-text">Quality Assurance</h3>
+                </li>
+                <li class="safety-item">
+                    <div class="check-wrapper">
+                        <img class="full-image check-icon" src="/Icons/CheckIcon.svg" alt="check mark" loading="lazy" decoding="async"/>
+                    </div>
+                    <h3 class="body-text">Engineering Integrity</h3>
+                </li>
+            </ul>
+        </div>
+    </div>
+</section>

@@ -88,14 +88,16 @@
 
     @media(pointer: fine)
     {
-        #nav-bar li:not(:last-child) .link:hover{
+        #nav-bar li:not(:last-child) .link:hover,
+        #nav-bar li:not(:last-child) .link:focus {
             color: var(--accent-color);
             text-shadow: -2px 2px 1px rgba(0, 0, 0, 0);
             transition: color .25s ease-in-out,
             text-shadow .25s ease-in-out;
         }
 
-        #nav-bar .logo-link:hover::after{
+        #nav-bar .logo-link:hover::after,
+        #nav-bar .logo-link:focus::after {
             scale: 100% 100%;
             transition: scale .3s ease-in-out;
             transform-origin: left;
@@ -268,6 +270,8 @@
         height: 100%;
         margin: 0rem 1rem;
         transition: background-color .2s ease-in-out;
+        color: var(--primary-color-dark);
+        text-shadow: none;
     }
 
     #nav-bar .link {
@@ -277,7 +281,8 @@
 
     @media(pointer: fine)
     {
-        #nav-bar #nav-link-4:hover {
+        #nav-bar #nav-link-4:hover,
+        #nav-bar #nav-link-4:focus {
             cursor: pointer;
             color: var(--text-color-light);
             background-color: var(--primary-color-light);

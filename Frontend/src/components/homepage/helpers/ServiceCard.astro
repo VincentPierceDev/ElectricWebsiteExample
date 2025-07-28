@@ -1,8 +1,7 @@
 ---
-import '../../../css/Global.css';
 import '../../../css/components/homepage/ServiceCard.css';
 
-const { title, description, href, idx, iconSrc} = Astro.props;
+const { title, description, href, idx, iconSrc, linkText} = Astro.props;
 
 const altText = title.split(' ')[0] + ' icon';
 ---
@@ -15,10 +14,10 @@ const altText = title.split(' ')[0] + ' icon';
         <h3 class="card-title">{title}</h3>
         <p class="card-text">{description}</p>
     </div>
-    <div class="flex-row">
-        <a href={href}>Learn More</a>
+    <div class="flex-row link-wrapper">
+        <a href={href}>{linkText}</a>
         <div class="chevron-wrapper">
-            <img class="full-image" src="/Icons/ChevronIcon.svg" alt="Chevron icon"/>
+            <img class="full-image" src="/Icons/ChevronIcon.svg" alt="Chevron icon" loading="lazy" decoding="async"/>
         </div>
     </div>
 </li>

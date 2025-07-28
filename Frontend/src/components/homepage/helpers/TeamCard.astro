@@ -1,0 +1,22 @@
+---
+const {occupation, firstName, lastName, photos, id, randomCard, about, socialLinks, socialIcons} = Astro.props;
+
+import '../../../css/components/homepage/TeamCard.css';
+---
+
+<li id={`team-card-${id}`} class=`team-card ${randomCard ? 'random-card' : ''}`}>
+    <span class="body-text occupation">{occupation}</span>
+    <br>
+    <div class="employee-info-wrapper">
+        <span class="section-heading name">{firstName}<br>{lastName}</span>
+        <p class="card-text about-text">{about}</p>
+    </div>
+    <picture>
+        {
+            photos.map((photo: any) => (
+                <source srcset={photo.src} type={photo.type} />
+            ))
+        }
+        <img class="full-image" src={photos[1].src} alt={`${firstName} ${lastName} in a professional potrait pose`}/>
+    </picture>
+</li>

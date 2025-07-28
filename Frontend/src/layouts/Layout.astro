@@ -1,21 +1,36 @@
 ---
-import '../css/Global.css';
 import NavBar from '../components/NavBar.astro';
 
 const {title, description} = Astro.props;
 
 const currentPath = Astro.url.pathname;
+
+import globalCss from '../css/Global.css?url';
+import navBarCss from '../css/components/NavBar.css?url';
 ---
 
 <!doctype html>
 <html lang="en">
 	<head>
+		<!-- This project does not setup meta data for off page SEO and visual styling -->
+		<!-- This is intentional as it is just an example project of what work I can do -->
+
 		<meta charset="UTF-8" />
 		<meta name="viewport" content="width=device-width" />
 		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
 		<meta name="generator" content={Astro.generator} />
 		<title>{title}</title>
 		<meta name="description" content={description}/>
+
+		<!-- Preload global styles -->
+		<link rel="preload" href={globalCss} as="style"/>
+		<link rel="stylesheet" type="text/css" href={globalCss} />
+
+		<!-- Preload NavBar styles -->
+		<link rel="preload" href={navBarCss} as="style"/>
+		<link rel="stylesheet" type="text/css" href={navBarCss} />
+
+		<!-- Preload Footer styles -->
 	</head>
 	<body>
 		<header>

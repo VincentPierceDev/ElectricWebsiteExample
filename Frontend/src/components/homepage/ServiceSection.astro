@@ -1,51 +1,58 @@
 ---
-import '../../css/Global.css';
 import '../../css/components/homepage/ServiceSection.css';
 import ServiceCard from './helpers/ServiceCard.astro';
+import PageButton from '../../components/generics/ButtonLink.astro';
 
 interface ServiceCardDetails {
     title: string;
     description: string;
     href: string;
     iconSrc: string;
+    linkText: string;
 }
 
 const details: ServiceCardDetails[] = [
     {
         title: "Lighting Installation",
         description: "Professional lighting installation to enhance your space.",
-        href: "/services/lighting",
-        iconSrc: "/Icons/LightBulbIcon.svg"
+        href: "/Services/#Lighting Installation",
+        iconSrc: "/Icons/LightBulbIcon.svg",
+        linkText: "View Options"
     },
     {
         title: "Panel Upgrades",
         description: "Upgrade your electrical panel for better performance and safety.",
-        href: "/services/panel-upgrades",
-        iconSrc: "/Icons/LightningBoltIcon.svg"
+        href: "/Services/#Panel Upgrades",
+        iconSrc: "/Icons/LightningBoltIcon.svg",
+        linkText: "Check Offerings"
     },
     {
         title: "Home Rewiring",
         description: "Complete rewiring services for older homes to meet modern standards.",
-        href: "/services/rewiring",
-        iconSrc: "/Icons/HomeIcon.svg"
+        href: "/Services/#Home Rewiring",
+        iconSrc: "/Icons/HomeIcon.svg",
+        linkText: "See Details"
     },
     {
         title: "Safety Inspections",
         description: "Thorough safety inspections to ensure your electrical systems are safe.",
-        href: "/services/safety-inspections",
-        iconSrc: "/Icons/SafetyIcon.svg"
+        href: "/Services/#Safety Inspections",
+        iconSrc: "/Icons/SafetyIcon.svg",
+        linkText: "Check Coverage"
     },
     {
         title: "Outlet Installation",
         description: "Installation of new outlets for convenience and accessibility.",
-        href: "/services/outlet-installation",
-        iconSrc: "/Icons/OutletIcon.svg"
+        href: "/Services/#Outlet Installation",
+        iconSrc: "/Icons/OutletIcon.svg",
+        linkText: "Explore Upgrades"
     },
     {
         title: "Generator Setup",
         description: "Reliable generator setup to keep your home powered during outages.",
-        href: "/services/generator-setup",
-        iconSrc: "/Icons/GeneratorIcon.svg"
+        href: "/Services/#Generator Setup",
+        iconSrc: "/Icons/GeneratorIcon.svg",
+        linkText: "Power Up"
     }
 ] as ServiceCardDetails[];
 ---
@@ -57,14 +64,19 @@ const details: ServiceCardDetails[] = [
             <p class="body-text">
                 From routine maintenance to full electrical overhauls, our licensed electricians deliver reliable, code-compliant solutions for both homes and businesses in the East Texas area. We handle everything from panel upgrades and wiring to lighting installation, circuit breakers, EV chargers, and more. Whether it is a quick fix or a complex project, we focus on safety, efficiency, and long-term performance, so your property stays powered and protected.
             </p>
-            <!-- Test -->
         </div>
         <ul class="service-list">
             {
                 details.map((detail, idx) => (
-                    <ServiceCard title={detail.title} description={detail.description} href={detail.href} iconSrc={detail.iconSrc} idx={idx}/>
+                    <ServiceCard title={detail.title} description={detail.description} href={detail.href} iconSrc={detail.iconSrc} linkText={detail.linkText} idx={idx}/>
                 ))
             }
         </ul>
+        <div class="flex-column cta-wrapper">
+            <span class="section-heading center-text">Checkout Everything We Offer!</span>
+            <div class="button-wrapper">
+                <PageButton href="/Services" primary="false">View All Services</PageButton>
+            </div>
+        </div>
     </div>
 </section>

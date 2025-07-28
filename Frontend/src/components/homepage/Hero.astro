@@ -1,5 +1,4 @@
 ---
-import '../../css/Global.css';
 import '../../css/components/homepage/Hero.css';
 import { ImportAvif, ImportWebP, ImportJpg } from '../../_Scripts/BuildScripts/ImageImporter';
 
@@ -10,28 +9,28 @@ import TabletImage from '../../assets/HomeHeroTablet.jpg';
 import DesktopImage from '../../assets/HomeHeroDesktop.jpg';
 
 /* Avif Imports */
-const ABGMobile = await ImportAvif(MobileImage, MobileImage.width / 2, "low");
+const ABGMobile = await ImportAvif(MobileImage, MobileImage.width / 2, "high");
 
-const ABGTablet = await ImportAvif(TabletImage, TabletImage.width / 2, "medium");
+const ABGTablet = await ImportAvif(TabletImage, TabletImage.width / 2, "high");
 
-const ABGDesktop = await ImportAvif(TabletImage, TabletImage.width / 2, "high");
+const ABGDesktop = await ImportAvif(DesktopImage, DesktopImage.width / 3, "high");
 
 /* Avif Imports */
 
 /* Webp Imports */
-const WBGMobile = await ImportWebP(MobileImage, MobileImage.width / 2, "low");
+const WBGMobile = await ImportWebP(MobileImage, MobileImage.width / 2, "high");
 
-const WBGTablet = await ImportWebP(TabletImage, TabletImage.width / 2, "medium");
+const WBGTablet = await ImportWebP(TabletImage, TabletImage.width / 2, "high");
 
-const WBGDesktop = await ImportWebP(DesktopImage, DesktopImage.width / 2, "high");
+const WBGDesktop = await ImportWebP(DesktopImage, DesktopImage.width / 2.2, "high");
 /* Webp Imports */
 
 /* Jpg Imports */
-const JBGMobile = await ImportJpg(MobileImage, MobileImage.width / 3, "low");
+const JBGMobile = await ImportJpg(MobileImage, MobileImage.width / 3, "medium");
 
-const JBGTablet = await ImportJpg(TabletImage, TabletImage.width / 3, "medium");
+const JBGTablet = await ImportJpg(TabletImage, TabletImage.width / 4, "high");
 
-const JBGDesktop = await ImportJpg(DesktopImage, DesktopImage.width / 3, "medium");
+const JBGDesktop = await ImportJpg(DesktopImage, DesktopImage.width / 3.2, "high");
 /* Jpg Imports */
 
 const MobileImages = [ABGMobile, WBGMobile, JBGMobile];
@@ -50,24 +49,22 @@ const DesktopImages = [ABGDesktop, WBGDesktop, JBGDesktop];
             <ButtonLink href="/Services" primary={false}>Our Services</ButtonLink>
         </div>
     </div>
-    <div class="background-image-wrapper">
-        <picture>
-            {
-                MobileImages.map((img) => (
-                    <source media="(max-width: 768px)"  srcset={img.src}/>
-                ))
-            }
-            {
-                TabletImages.map((img) => (
-                    <source media="(max-width: 1024px)" srcset={img.src}/>
-                ))
-            }
-            {
-                DesktopImages.map((img) => (
-                    <source media="(min-width: 1025px)" srcset={img.src}/>
-                ))
-            }
-            <img class="full-image" src="" alt="background image of an electrician working">
-        </picture>
-    </div>
+    <picture>
+        {
+            MobileImages.map((img) => (
+                <source media="(max-width: 768px)"  srcset={img.src}/>
+            ))
+        }
+        {
+            TabletImages.map((img) => (
+                <source media="(max-width: 1024px)" srcset={img.src}/>
+            ))
+        }
+        {
+            DesktopImages.map((img) => (
+                <source media="(min-width: 1025px)" srcset={img.src}/>
+            ))
+        }
+        <img class="full-image" src={TabletImages[1].src} alt="top down view of an electrician working on electrical lines in a lifted bucket" loading="eager" decoding="async"/>
+    </picture>
 </section>

@@ -1,0 +1,76 @@
+@media(min-width: 0px)
+{
+    #home-stat-section {
+        background: #F7F7F7;
+    }
+
+    #home-stat-section #content-divider {
+        gap: clamp(1.5rem, 2vw, 3rem);
+    }
+
+    #home-stat-section .text-content-wrapper {
+        max-width: 45rem;
+    }
+
+    #home-stat-section .stat-list {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        justify-content: center;
+        text-align: center;
+    }
+
+    #home-stat-section .stat-card {
+        gap: 1rem;
+        padding: 1.5rem;
+        background: white;
+        border-radius: 0.5rem;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        max-width: 20rem;
+        margin: 0 auto;
+    }
+
+    #home-stat-section .icon-wrapper {
+        margin: 0 auto;
+        width: 4rem;
+        height: 4rem;
+        background: var(--primary-color-light);
+        border-radius: 50%;
+        padding: .25rem;
+    }
+
+    /* Don't want to clutter mobile scrolling that is already a mile long*/
+    #home-stat-section #standalone-card{
+        display: none;
+    }
+}
+
+@media(min-width: 768px)
+{
+    #home-stat-section .stat-list {
+        flex-direction: row;
+        justify-content: space-evenly;
+    }
+
+    /* The row will squish the cards together anyways */
+    #home-stat-section .stat-card {
+        max-width: 50rem;
+    }
+
+    #home-stat-section #standalone-card {
+        display: flex;
+        min-width: 20.188rem;
+        max-width: 28.5rem;
+        width: 100%;
+        margin-right: 0;
+        text-align: center;
+    }
+
+    #home-stat-section .top-content {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        gap: 1rem;
+    }
+
+}

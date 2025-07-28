@@ -1,0 +1,65 @@
+---
+import TeamCard from "./helpers/TeamCard.astro";
+import '../../css/components/homepage/MeetTheTeam.css';
+import { ImportAvif, ImportWebP, ImportPng } from "../../_Scripts/BuildScripts/ImageImporter";
+
+import MaleEmployeePhoto from '../../assets/Employees/MaleEmployee.png';
+import FemaleEmployeePhoto from '../../assets/Employees/FemaleEmployee.png';
+
+/* Avif imports */
+const AMEObject = await ImportAvif(MaleEmployeePhoto, MaleEmployeePhoto.width / 2, "high");
+const MFEObject = await ImportAvif(FemaleEmployeePhoto, FemaleEmployeePhoto.width / 2, "high");
+
+/* WebP imports */
+const WPEObject = await ImportWebP(MaleEmployeePhoto, MaleEmployeePhoto.width / 2, "high");
+const WFEObject = await ImportWebP(FemaleEmployeePhoto, FemaleEmployeePhoto.width / 2, "high");
+
+/* PNG imports */
+const PMEObject = await ImportPng(MaleEmployeePhoto, MaleEmployeePhoto.width / 3, "medium");
+const PFEObject = await ImportPng(FemaleEmployeePhoto, FemaleEmployeePhoto.width / 3, "medium");
+
+const MalePhotos = [AMEObject, WPEObject, PMEObject];
+const FemalePhotos = [MFEObject, WFEObject, PFEObject];
+
+interface Employee {
+    firstName: string;
+    lastName: string;
+    occupation: string;
+    photos: any[];
+    randomCard: boolean;
+    about: string;
+}
+
+const employees: Employee[] = [
+    { firstName: "Mike", lastName: "Doe", occupation: "Owner", photos: MalePhotos, randomCard: false, about: "I am the proud owner of Watts Electric. With over 20 years of experience I ensure that our team delivers the best service possible."},
+    { firstName: "Jane", lastName: "Doe", occupation: "Head of Operations", photos: FemalePhotos, randomCard: true, about: "I ensure all of our projects run smoothly and efficiently. I absolutely love my job and could not wish for a better team to manage."},
+    { firstName: "Jane", lastName: "Smith", occupation: "Project Manager", photos: FemalePhotos, randomCard: false, about: "I manage all of our projects from start to finish to ensure expected deadlines are met with quality. I love bridging the gap between our loyal clients and our skilled team to ensure all expectations are met."},
+    { firstName: "Alice", lastName: "Johnson", occupation: "Lead Contractor", photos: FemalePhotos, randomCard: false, about: "With 15 years of experience in the field, I am honored to be able to lead our team of contractors on every project. I take pride in ensuring that every electrical job is done to the highest standards."},
+    { firstName: "Chris", lastName: "Lee", occupation: "Senior Electrician", photos: MalePhotos, randomCard: false, about: "I have been with Watts for about 3 years now, and I have to say that this is the best team I have ever been a part of. I look forward to the future ahead as being a senior on this team."},
+    { firstName: "Lisa", lastName: "White", occupation: "Senior Electrician", photos: FemalePhotos, randomCard: true, about: "I am excited to finally be promoted to a senior electrician. I have been with Watts since the beginning and I am proud to be a part of this team. I look forward to mentoring our apprentices and helping them grow like I have."},
+    { firstName: "John", lastName: "Smith", occupation: "General Electrician", photos: MalePhotos, randomCard: false, about: "I have been an electrician for over 10 years and I am proud to be a part of the Watts team. I take pride in my work and always strive to deliver the best service possible."},
+    { firstName: "Bob", lastName: "Williams", occupation: "General Electrician", photos: MalePhotos, randomCard: false, about: "I recently joined the Watts team and I am excited to be a part of such a skilled, loyal, and dedicated team! I look forward to learning from my fellow electricians and growing in my career."},
+    { firstName: "Charlie", lastName: "Brown", occupation: "General Electrician", photos: MalePhotos, randomCard: true, about: "As a recent apprentice, I am thrilled to be a part of the Watts team. I am excited to see what the future holds for me as I continue to learn and grow with this amazing team."},
+    { firstName: "David", lastName: "Wilson", occupation: "General Electrician", photos: MalePhotos, randomCard: false, about: "I have a strong passion for electrical work and I am proud to be a part of the Watts team. I take pride in all my work and always strive to deliver the best service possible."},
+    { firstName: "Laura", lastName: "Green", occupation: "Apprentice Electrician", photos: FemalePhotos, randomCard: false, about: "As a recent graduate of an electrical program, I am excited to start my career with Watts Electric and learn as much as I can from the best!"},
+    { firstName: "Tom", lastName: "Harris", occupation: "Apprentice Electrician", photos: MalePhotos, randomCard: false, about: "I am thrilled to be starting my career with Watts Electric. I started out knowing absolutely nothing about electrical work, but have picked up and learned so much in my short time here so far. I look forward to the future ahead!"},
+    { firstName: "Emily", lastName: "Johnson", occupation: "Lead Sales Associate", photos: FemalePhotos, randomCard: false, about: "Sales has been my passions for my entire life. I love talking with people, negotiating deals, and ensuring that our clients are fully aware of all the services we offer. I am proud to be a part of the Watts team!"},
+    { firstName: "Michael", lastName: "Brown", occupation: "Sales Associate", photos: MalePhotos, randomCard: true, about: "I have been in sales for a few years now and I can't wait to learn more about the electrical industry. Emily is a great mentor and I am glad I get to work with her every day."},
+    { firstName: "Sarah", lastName: "Davis", occupation: "Sales Associate", photos: FemalePhotos, randomCard: false, about: "I was lost in life before finding Watts Electric. Mike had an open job posting and I applied on a whim and to my amazement he gave me a chance! I am so thankful for all of our team members, and strive to help grow the business."}
+];
+---
+
+<section id="team-section" class="section">
+    <div class="container">
+        <h2 class="section-heading">Meet Our Team</h2>
+        <ul class="team-list">
+            {
+                employees.map((employee, idx) => (
+                    <li>
+                        <TeamCard id={idx} firstName={employee.firstName} lastName={employee.lastName} occupation={employee.occupation} photos={employee.photos}, randomCard={employee.randomCard}, about={employee.about}/>
+                    </li>
+                ))   
+            }
+        </ul>
+    </div>
+</section>

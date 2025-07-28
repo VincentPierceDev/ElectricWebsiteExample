@@ -1,0 +1,27 @@
+@media(min-width: 0px)
+{
+    #team-section {
+        background: var(--primary-color-dark);
+    }
+
+    #team-section h2 {
+        color: var(--text-color-light);
+        text-align: center;
+    }
+
+    #team-section .team-list {
+        display: grid;
+        flex-direction: column;
+    }
+}
+
+@media(min-width: 768px) {
+
+    #team-section .team-list {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex: 1;
+    }
+
+}
