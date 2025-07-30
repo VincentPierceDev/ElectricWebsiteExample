@@ -69,6 +69,14 @@
         box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
         max-width: 20rem;
         margin: 0 auto;
+        scale: 0;
+        opacity: 0;
+    }
+
+    #safety-section .stat-card.appear {
+        scale: 1;
+        opacity: 1;
+        transition: scale 0.3s ease-in-out, opacity 0.3s ease-in-out;
     }
 
     #safety-section .icon-wrapper {
