@@ -8,9 +8,25 @@
         max-height: 25rem;
         z-index: 1;
         padding: 1rem;
-        position: relative;
+        position: absolute;
         transition: transform 0.2s ease-in;
         transition-delay: .2s;
+        opacity: 0;
+        scale: .75;
+        pointer-events: none;
+
+        /* the text has weird highligting for some reason */
+        /* so just completey disabling it */
+        user-select: none;
+        -webkit-user-drag: none;
+    }
+
+    .team-card.visible {
+        pointer-events: all;
+        position: relative;
+        opacity: 1;
+        scale: 1;
+        transition: opacity 0.5s ease-in-out, scale 0.5s ease-in-out;
     }
 
     /* Color Swip Effect */

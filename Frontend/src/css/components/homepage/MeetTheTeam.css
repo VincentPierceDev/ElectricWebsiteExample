@@ -2,6 +2,13 @@
 {
     #team-section {
         background: var(--primary-color-dark);
+        position: relative;
+        z-index: 1;
+        overflow: hidden;
+    }
+
+    #team-section .team-container {
+        gap: clamp(3rem, 9vw, 4rem);
     }
 
     #team-section h2 {
@@ -12,7 +19,88 @@
     #team-section .team-list {
         display: grid;
         flex-direction: column;
+        background-color: var(--primary-color-dark);
+        width: fit-content;
+        opacity: 1;
+        transition: background-color 0.2s ease-in-out;
     }
+
+    #team-section .clear-background {
+        background-color: transparent;
+    }
+
+    #team-section .lightning-image-wrapper{
+        position: absolute;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: -1;
+    }
+
+    #team-section #lightning-image-wrapper-right{
+        left: 25%;
+    }
+
+    #team-section #lightning-image-wrapper-left{
+        right: 30%;
+    }
+
+    #team-section .lightning-image {
+        user-select: none;
+        pointer-events: none;
+        -webkit-user-drag: none;
+        opacity: .25;
+    }
+
+
+    #team-section #team-button-container {
+        display: flex;
+        justify-content: center;
+        gap: 1rem;
+        margin-top: 1rem;
+        align-items: center;
+    }
+
+    #team-section #team-button-container button {
+        background: none;
+        border: none;
+    }
+
+    @media(pointer: fine) {
+        #team-section #team-button-container button:hover {
+            cursor: pointer;
+            background: linear-gradient(to top, var(--accent-color), transparent 20%);
+        }
+    }
+
+    #team-section #team-button-container button:active img {
+        transform: scale(0.8);
+    }
+
+    #team-section #left-button-icon {
+        rotate: 180deg;
+    }
+
+    #team-section .team-radial-indicator {
+        width: 1rem;
+        height: 1rem;
+        border-radius: 50%;
+        border: 2px solid white;
+        transition: background-color 0.2s ease-out;
+    }
+
+    #team-section .team-radial-indicator.active {
+        background-color: white;
+        transition: background-color 0.2s ease-in;
+    }
+
+    #team-section #left-button-icon,
+    #team-section #right-button-icon {
+        user-select: none;
+        pointer-events: none;
+        -webkit-user-drag: none;
+    }
+
 }
 
 @media(min-width: 768px) {
@@ -22,6 +110,7 @@
         flex-direction: row;
         flex-wrap: wrap;
         flex: 1;
+        justify-content: center;
     }
 
 }

@@ -50,9 +50,9 @@ const employees: Employee[] = [
 ---
 
 <section id="team-section" class="section">
-    <div class="container">
+    <div class="container team-container flex-column">
         <h2 class="section-heading">Meet Our Team</h2>
-        <ul class="team-list">
+        <ul id="team-section-list" class="team-list">
             {
                 employees.map((employee, idx) => (
                     <li>
@@ -61,5 +61,24 @@ const employees: Employee[] = [
                 ))   
             }
         </ul>
+        <div id="team-button-container">
+            <button id="left-button">
+                <img id="left-button-icon" class="full-image" src="/Icons/ChevronIcon.svg" loading="lazy" decoding="async" alt="left chevron icon"/>
+            </button>
+            {
+                employees.map((employee, idx) => (
+                    idx % 5 === 0 && <div class="team-radial-indicator" role="presentation" aria-current="false"/>
+                ))
+            }
+            <button id="right-button">
+                <img id="right-button-icon" class="full-image" src="/Icons/ChevronIcon.svg" loading="lazy" decoding="async" alt="right chevron icon"/>
+            </button>
+        </div>
+    </div>
+    <div id="lightning-image-wrapper-right" class="lightning-image-wrapper">
+        <img class="full-image lightning-image" src="/Lightning.svg" alt="lightning bolts striking" decoding="async" loading="lazy"/>
+    </div>
+    <div id="lightning-image-wrapper-left" class="lightning-image-wrapper">
+        <img class="full-image lightning-image" src="/Lightning.svg" alt="lightning bolts striking" decoding="async" loading="lazy"/>
     </div>
 </section>
