@@ -2,6 +2,7 @@
 {
     #home-stat-section {
         background: #F7F7F7;
+        padding-bottom: 0;
     }
 
     #home-stat-section #content-divider {
@@ -30,6 +31,7 @@
         margin: 0 auto;
         scale: 0;
         opacity: 0;
+        flex: 1;
     }
 
     #home-stat-section .stat-card.appear {
@@ -42,7 +44,7 @@
         transition-delay: 0.2s;
     }
 
-    #home-stat-section #stat-card-1{
+    #home-stat-section #stat-card-3{
         transition-delay: 0.4s;
     }
 
@@ -56,7 +58,7 @@
     }
 
     /* Don't want to clutter mobile scrolling that is already a mile long*/
-    #home-stat-section #standalone-card{
+    #home-stat-section #standalone-card-top{
         display: none;
     }
 }
@@ -73,20 +75,25 @@
         max-width: 50rem;
     }
 
-    #home-stat-section #standalone-card {
+    #home-stat-section #standalone-card-top {
         display: flex;
-        min-width: 20.188rem;
-        max-width: 28.5rem;
         width: 100%;
-        margin-right: 0;
+        margin: 0;
         text-align: center;
+        flex: 1;
     }
 
     #home-stat-section .top-content {
         display: flex;
-        flex-direction: row;
+        width: 100%;
+        flex-direction: row-reverse;
         justify-content: space-between;
-        gap: 1rem;
+        gap: 3rem;
+    }
+
+    #home-stat-section .description {
+        display: inline-block;
+        flex: 1;
     }
 
 }

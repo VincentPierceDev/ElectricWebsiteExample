@@ -6,10 +6,10 @@
 
     #safety-section .container {
         gap: clamp(1.5rem, 4vw, 3rem);
+        padding-top: 0;
     }
 
     #safety-section h2{
-        margin-left: auto;
         width: fit-content;
     }
 
@@ -39,6 +39,7 @@
 
     #safety-section .safety-list {
         list-style: none;
+        margin-bottom: auto;
     }
 
     #safety-section .safety-item {
@@ -88,7 +89,7 @@
         padding: .25rem;
     }
 
-    #safety-section #standalone-card {
+    #safety-section #standalone-card-bottom {
         display: none;
     }
 }
@@ -103,12 +104,12 @@
 
     #safety-section .top-content {
         display: flex;
-        flex-direction: row-reverse;
+        flex-direction: row;
         justify-content: space-between;
         gap: 5rem;
     }
 
-    #safety-section #standalone-card {
+    #safety-section #standalone-card-bottom {
         display: flex;
         min-width: 18rem;
         max-width: 24rem;

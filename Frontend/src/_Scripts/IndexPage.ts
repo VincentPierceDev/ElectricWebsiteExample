@@ -4,8 +4,41 @@ function Start() {
     const scrollEffects: PageScrollEffects = new PageScrollEffects();
     scrollEffects.scrollEvent(); 
     
-    const teamReel: TeamReel = new TeamReel();
+    BindTeamButtons();
+    PageResize();
+}
 
+function PageResize(): void {
+
+    const flexCard: HTMLLIElement = document.getElementById('stat-card-1') as HTMLLIElement;
+
+    //the top standalone stat card
+    const resizeTopCard = () => {
+        const card: HTMLDivElement = document.getElementById('standalone-card-top') as HTMLDivElement;
+        const width: number = flexCard.clientWidth;
+        card.style.minWidth = `${width}px`;
+        card.style.maxWidth = `${width}px`;
+    }
+
+    //the bottom standalone stat card
+    const resizeBottomCard = () => {
+        const card: HTMLDivElement = document.getElementById('standalone-card-bottom') as HTMLDivElement;
+        const width: number = flexCard.clientWidth;
+        card.style.minWidth = `${width}px`;
+        card.style.maxWidth = `${width}px`;
+    }
+
+    resizeTopCard();
+    resizeBottomCard();
+
+    window.addEventListener('resize', () => {
+        resizeTopCard();
+        resizeBottomCard();
+    });
+}
+
+function BindTeamButtons(): void {
+    const teamReel: TeamReel = new TeamReel();
     const teamButtonContainer: HTMLDivElement = document.getElementById("team-button-container") as HTMLDivElement;
 
     teamButtonContainer.addEventListener('click', (e) => {
@@ -14,7 +47,7 @@ function Start() {
             teamReel.ReelLeft();
         else if(target.id === "right-button")
             teamReel.ReelRight();
-    })
+    });
 }
 
 //simple class to handle scroll effects on the index page and seperate the logic
