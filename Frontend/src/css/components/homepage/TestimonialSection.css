@@ -1,0 +1,102 @@
+@media(min-width: 0px)
+{
+    #testimonial-section{
+        background: linear-gradient(to top, #D7D7D7, #FFFFFF);
+    }
+
+    #testimonial-section .flex{
+        display: flex;
+        flex-direction: column;
+        gap: clamp(3rem, 8vw, 4rem);
+    }
+
+    #testimonial-section .top-content {
+        text-align: center;
+    }
+
+    #testimonial-section .bottom-content{
+        display: flex;
+        flex-direction: column;
+        gap: 1.15rem;
+    }
+
+    #testimonial-section .card{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        gap: clamp(1.5rem, 3.8vw, 3rem);
+        background: white;
+        border-radius: 0.5rem;
+        list-style: none;
+        padding: clamp(1.25rem, 2.75vw, 3rem);
+    }
+
+    #testimonial-section .card-header{
+        display: flex;
+        flex-direction: row;
+        gap: 1rem;
+    }
+
+    #testimonial-section .name{
+        font-weight: 700;
+        font-size: 1.25rem;
+        line-height: 1.2;
+        font-family:Arial, Helvetica, sans-serif;
+    }
+
+    #testimonial-section .logo-wrapper{
+        width: 3.25rem;
+        height: 3.25rem;
+        border-radius: 50%;
+        background: black;
+    }
+
+    #testimonial-section .card-icon{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        vertical-align: bottom;
+        user-select: none;
+        -webkit-user-drag: none;
+    }
+
+    #testimonial-section .rating-wrapper{
+        display: flex;
+        flex-direction: row;
+        user-select: none;
+    }
+
+    #testimonial-section .rating-number{
+        font-weight: 700;
+        font-size: 1rem;
+        font-family: Arial, Helvetica, sans-serif;
+        /* Set it even with the stars */
+        margin-top: auto;
+        margin-left: 1rem;
+    }
+
+    #testimonial-section .quote{
+        font-family: Arial, Helvetica, sans-serif;
+        font-size: clamp(0.875rem, 1.75vw, 1.25rem);
+        font-weight: 400;
+        line-height: 1.5;
+    }
+
+    #testimonial-section .quotation-wrapper{
+        position: absolute;
+        right: 0;
+        bottom: 0;
+        opacity: 35%;
+        width: 50%;
+        user-select: none;
+        -webkit-user-drag: none;
+        pointer-events: none;
+    }
+}
+
+@media(min-width: 768px)
+{
+    #testimonial-section .bottom-content{
+        flex-direction: row;
+    }
+}

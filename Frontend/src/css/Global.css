@@ -54,7 +54,8 @@
     .section {
         height: fit-content;
         width: 100%;
-        padding: clamp(1.25rem, 3.9vw, 2rem);
+        padding-top: clamp(1.5rem, 3.9vw, 3rem);
+        padding-bottom: clamp(1.5rem, 3.9vw, 3rem);
     }
 
     .container {

@@ -9,6 +9,7 @@
         width: fit-content;
         height: fit-content;
         text-decoration: none;
+        display: inline-block;
     }
 
     @media(pointer: fine)

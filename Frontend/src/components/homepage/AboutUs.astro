@@ -1,0 +1,58 @@
+---
+import ButtonLink from "../generics/ButtonLink.astro"
+import '../../css/components/homepage/AboutUs.css';
+---
+
+<section id="about-us-section" class="section">
+    <div class="container flex-column">
+        <div class="top-wrapper">
+            <div class="text-content">
+                <h2 class="section-heading">Years of Expertise Reliably Delivered</h2>
+                <p class="body-text">In the new era of technology we look forward to the future of innovation and excellence. In accordance with our commitment to quality, we strive to deliver exceptional results for our clients.</p>
+                <div class="button-wrapper">
+                    <ButtonLink href="/About">More About Us</ButtonLink>
+                </div>
+            </div>
+            <ul class="quality-list">
+                <li class="quality-item">
+                    <div class="image-wrapper">
+                        <img class="full-image quality-image" src="/Icons/QualityIcon.svg" alt="quality icon" loading="lazy" decoding="async"/>
+                    </div>
+                    <h3 class="card-title">Quality</h3>
+                </li>
+                <li class="quality-item">
+                    <div class="image-wrapper">
+                        <img class="full-image quality-image" src="/Icons/IntegrityIcon.svg" alt="integrity icon" loading="lazy" decoding="async"/>
+                    </div>
+                    <h3 class="card-title">Integrity</h3>
+                </li>
+                <li class="quality-item">
+                    <div class="image-wrapper">
+                        <img class="full-image quality-image" src="/Icons/LightBulbIcon.svg" alt="innovation icon" loading="lazy" decoding="async"/>
+                    </div>
+                    <h3 class="card-title">Innovation</h3>
+                </li>
+                <li class="quality-item">
+                    <div class="image-wrapper">
+                        <img class="full-image quality-image" src="/Icons/ReliabilityIcon.svg" alt="reliability icon" loading="lazy" decoding="async"/>
+                    </div>
+                    <h3 class="card-title">Reliability</h3>
+                </li>
+            </ul>
+        </div>
+        <ul class="bottom-wrapper">
+            <li class="stat">
+                <span class="section-heading">20+</span>
+                <h4 class="card-text">Years of Experience</h4>
+            </li>
+            <li id="middle-stat" class="stat">
+                <span class="section-heading">5k+</span>
+                <h4 class="card-text">Projects Completed</h4>
+            </li>
+            <li class="stat">
+                <span class="section-heading">2k+</span>
+                <h4 class="card-text">Satisfied Clients</h4>
+            </li>
+        </ul>
+    </div>
+</section>

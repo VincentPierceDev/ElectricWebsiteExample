@@ -1,0 +1,114 @@
+@media(min-width: 0px)
+{
+    #about-us-section .container {
+        gap: 2.5rem;
+    }
+
+    #about-us-section .top-wrapper {
+        display: flex;
+        flex-direction: column;
+    }
+
+    #about-us-section .button-wrapper {
+        margin-top: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    #about-us-section .quality-list {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto auto;
+        row-gap: 1rem;
+        column-gap: 1rem;
+        list-style: none;
+    }
+
+    #about-us-section .quality-list li {
+        display: flex;
+        flex-direction: column;
+        background: #F7F7F7;
+        gap: clamp(0.75rem, 3vw, 1.5rem);
+        padding: 1rem;
+        border-radius: 0.5rem;
+        border: 2px solid #E7E7E7;
+    }
+
+    #about-us-section .quality-image {
+        filter: brightness(0) saturate(100%) invert(83%) sepia(29%) saturate(6603%) hue-rotate(5deg) brightness(101%) contrast(94%);
+    }
+
+    #about-us-section .quality-list .image-wrapper {
+        width: 2.188rem;
+        height: 2.188rem;
+    }
+
+    #about-us-section .bottom-wrapper {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-evenly;
+        text-align: center;
+        list-style: none;
+    }
+
+    #about-us-section .stat{
+        width: 100%;
+    }
+
+    #about-us-section #middle-stat {
+        position: relative;
+    }
+
+}
+
+@media(min-width: 768px)
+{
+    #about-us-section .text-content{
+        max-width: 40rem;
+    }
+
+    #about-us-section .quality-list li{
+        padding: clamp(1rem, 2.1vw, 2.5rem) clamp(1rem, 2.1vw, 2rem);
+    }
+
+    /* The bars are weird on small mobile screens so just diplaying them here*/
+    #about-us-section #middle-stat::before {
+        content: "";
+        position: absolute;
+        left: 0;
+        top: 0;
+        width: 3px;
+        height: 100%;
+        background-color: var(--accent-color);
+        border-radius: 75%;
+        opacity: .5;
+    }
+
+    #about-us-section #middle-stat::after {
+        content: "";
+        position: absolute;
+        left: 100%;
+        bottom: 0;
+        width: 3px;
+        height: 100%;
+        background-color: var(--accent-color);
+        border-radius: 75%;
+        opacity: .5;
+    }
+}
+
+@media(min-width: 1024px)
+{
+    #about-us-section .top-wrapper {
+        flex-direction: row;
+        justify-content: space-between;
+    }
+
+    #about-us-section .quality-list li {
+        flex-direction: row;
+        align-items: center;
+    }
+
+    #about-us-section .container {
+        gap: 4rem;
+    }
+}

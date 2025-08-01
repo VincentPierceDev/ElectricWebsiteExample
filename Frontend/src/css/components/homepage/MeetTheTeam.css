@@ -17,16 +17,14 @@
     }
 
     #team-section .team-list {
-        display: grid;
-        flex-direction: column;
-        background-color: var(--primary-color-dark);
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
         width: fit-content;
         opacity: 1;
         transition: background-color 0.2s ease-in-out;
-    }
-
-    #team-section .clear-background {
-        background-color: transparent;
+        justify-content: center;
+        list-style: none;
     }
 
     #team-section .lightning-image-wrapper{
@@ -38,11 +36,11 @@
     }
 
     #team-section #lightning-image-wrapper-right{
-        left: 25%;
+        left: 0%;
     }
 
     #team-section #lightning-image-wrapper-left{
-        right: 30%;
+        right: 0%;
     }
 
     #team-section .lightning-image {
@@ -111,6 +109,18 @@
         flex-wrap: wrap;
         flex: 1;
         justify-content: center;
+        background-color: var(--primary-color-dark);
     }
 
+    #team-section .clear-background {
+        background-color: transparent;
+    }
+
+    #team-section #lightning-image-wrapper-right{
+        left: 25%;
+    }
+
+    #team-section #lightning-image-wrapper-left{
+        right: 30%;
+    }
 }
