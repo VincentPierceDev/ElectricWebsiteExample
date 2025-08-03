@@ -63,7 +63,7 @@ const employees: Employee[] = [
         </ul>
         <div id="team-button-container">
             <button id="left-button">
-                <img id="left-button-icon" class="full-image" src="/Icons/ChevronIcon.svg" loading="lazy" decoding="async" alt="left chevron icon"/>
+                <img id="left-button-icon" class="full-image" src={`${import.meta.env.BASE_URL}/Icons/ChevronIcon.svg`} loading="lazy" decoding="async" alt="left chevron icon" />
             </button>
             {
                 employees.map((employee, idx) => (
@@ -71,14 +71,14 @@ const employees: Employee[] = [
                 ))
             }
             <button id="right-button">
-                <img id="right-button-icon" class="full-image" src="/Icons/ChevronIcon.svg" loading="lazy" decoding="async" alt="right chevron icon"/>
+                <img id="right-button-icon" class="full-image" src={`${import.meta.env.BASE_URL}/Icons/ChevronIcon.svg`} loading="lazy" decoding="async" alt="right chevron icon" />
             </button>
         </div>
     </div>
     <div id="lightning-image-wrapper-right" class="lightning-image-wrapper">
-        <img class="full-image lightning-image" src="/Lightning.svg" alt="lightning bolts striking" decoding="async" loading="lazy"/>
+        <img class="full-image lightning-image" src={`${import.meta.env.BASE_URL}/Lightning.svg`} alt="lightning bolts striking" decoding="async" loading="lazy" />
     </div>
     <div id="lightning-image-wrapper-left" class="lightning-image-wrapper">
-        <img class="full-image lightning-image" src="/Lightning.svg" alt="lightning bolts striking" decoding="async" loading="lazy"/>
+        <img class="full-image lightning-image" src={`${import.meta.env.BASE_URL}/Lightning.svg`} alt="lightning bolts striking" decoding="async" loading="lazy"/>
     </div>
 </section>

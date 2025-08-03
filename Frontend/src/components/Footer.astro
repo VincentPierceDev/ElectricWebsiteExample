@@ -1,3 +1,6 @@
+---
+const {currentPath} = Astro.props;
+---
 
 <div id="footer-section" class="section">
     <div class="container">
@@ -6,11 +9,11 @@
             <p class="card-text statement">Your trusted partner for any and all <strong>electrical solutions.</strong></p>
         </div>
         <ul class="link-wrapper">
-            <li><a class="body-text" href="/">Home</a></li>
-            <li><a class="body-text" href="/About">About</a></li>
-            <li><a class="body-text" href="/Services">Services</a></li>
-            <li><a class="body-text" href="/Testimonials">Testimonials</a></li>
-            <li><a class="body-text" href="/Contact">Contact</a></li>
+            <li><a class="body-text" href="/" aria-current={`${currentPath === "/" ? 'true' : 'false'}`}>Home</a></li>
+            <li><a class="body-text" href="/About" aria-current={`${currentPath === "/About" ? 'true' : 'false'}`}>About</a></li>
+            <li><a class="body-text" href="/Services" aria-current={`${currentPath === "/Services" ? 'true' : 'false'}`}>Services</a></li>
+            <li><a class="body-text" href="/Testimonials" aria-current={`${currentPath === "/Testimonials" ? 'true' : 'false'}`}>Testimonials</a></li>
+            <li><a class="body-text" href="/Contact" aria-current={`${currentPath === "/Contact" ? 'true' : 'false'}`}>Contact</a></li>
         </ul>
     </div>
 </div>

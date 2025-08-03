@@ -17,7 +17,7 @@ const altText = title.split(' ')[0] + ' icon';
     <div class="flex-row link-wrapper">
         <a href={href}>{linkText}</a>
         <div class="chevron-wrapper">
-            <img class="full-image" src="/Icons/ChevronIcon.svg" alt="Chevron icon" loading="lazy" decoding="async"/>
+            <img class="full-image" src={`${import.meta.env.BASE_URL}/Icons/ChevronIcon.svg`} alt="Chevron icon" loading="lazy" decoding="async" />
         </div>
     </div>
 </li>
