@@ -6,10 +6,13 @@
     "dev": "astro dev",
     "build:scripts": "vite build --config vite.scripts.config.js",
     "build": "npm run build:scripts && astro build",
+    "build:gh-pages": "astro check && astro build --base=/ElectricWebsiteExample/",
     "preview": "astro preview",
     "astro": "astro"
   },
   "dependencies": {
-    "astro": "^5.12.3"
+    "@astrojs/check": "^0.9.4",
+    "astro": "^5.12.3",
+    "typescript": "^5.9.2"
   }
 }
