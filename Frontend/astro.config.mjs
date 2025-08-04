@@ -17,7 +17,7 @@ export default defineConfig({
 
     trailingSlash: 'ignore',
     site: 'https://vincentpiercedev.github.io/',
-    base: '/ElectricWebsiteExample/',
+    base: '/',
     output: 'static',
     
 });
