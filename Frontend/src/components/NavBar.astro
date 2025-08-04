@@ -38,7 +38,7 @@ const {currentPath} = Astro.props;
             {
                 links.map((link, idx) => (
                     <li>
-                        <a id={`nav-link-${idx}`} class={`body-text link ${currentPath === link.href ? 'current-link' : ''}`} href={link.href} aria-current={`${currentPath === link.href ? 'true' : 'false'}`}>{link.text}</a>
+                        <a id={`nav-link-${idx}`} class={`body-text link ${currentPath === `${import.meta.env.BASE_URL}${link.href}` ? 'current-link' : ''}`} href={link.href} aria-current={`${currentPath === `${import.meta.env.BASE_URL}${link.href}` ? 'true' : 'false'}`}>{link.text}</a>
                     </li>
                 ))
             }
